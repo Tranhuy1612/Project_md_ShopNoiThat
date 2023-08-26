@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit catalog</title>
+</head>
+<body>
+    <form th:action="@{/views/editCatalog}" th:object="${catalog}" method="post" >
+        <input type="number" readonly th:field="*{id}">
+        <input type="text" placeholder="name" th:field="*{name}">
+        <select name="status">
+            <option value="true" th:selected="${catalog.status}">In Stock</option>
+            <option value="false" th:selected="${!catalog.status}">Out of Stock</option>
+        </select>
+        <input type="submit" value="update">
+    </form>
+</body>
+</html>
