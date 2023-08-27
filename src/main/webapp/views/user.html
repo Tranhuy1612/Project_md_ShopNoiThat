@@ -41,8 +41,8 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="category">
-                        <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Category</span>
+                    <a class="sidebar-link" href="catalog">
+                        <i class="align-middle" data-feather="grid"></i> <span class="align-middle">catalog</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -154,7 +154,8 @@
                                 <a href="#" class="list-group-item">
                                     <div class="row g-0 align-items-center">
                                         <div class="col-2">
-                                            <img th:src="@{img/avatars/avatar-5.jpg}" class="avatar img-fluid rounded-circle"
+                                            <img th:src="@{img/avatars/avatar-5.jpg}"
+                                                 class="avatar img-fluid rounded-circle"
                                                  alt="Vanessa Tucker">
                                         </div>
                                         <div class="col-10 ps-2">
@@ -169,7 +170,8 @@
                                 <a href="#" class="list-group-item">
                                     <div class="row g-0 align-items-center">
                                         <div class="col-2">
-                                            <img th:src="@{img/avatars/avatar-2.jpg}" class="avatar img-fluid rounded-circle"
+                                            <img th:src="@{img/avatars/avatar-2.jpg}"
+                                                 class="avatar img-fluid rounded-circle"
                                                  alt="William Harris">
                                         </div>
                                         <div class="col-10 ps-2">
@@ -183,7 +185,8 @@
                                 <a href="#" class="list-group-item">
                                     <div class="row g-0 align-items-center">
                                         <div class="col-2">
-                                            <img th:src="@{img/avatars/avatar-4.jpg}" class="avatar img-fluid rounded-circle"
+                                            <img th:src="@{img/avatars/avatar-4.jpg}"
+                                                 class="avatar img-fluid rounded-circle"
                                                  alt="Christina Mason">
                                         </div>
                                         <div class="col-10 ps-2">
@@ -196,7 +199,8 @@
                                 <a href="#" class="list-group-item">
                                     <div class="row g-0 align-items-center">
                                         <div class="col-2">
-                                            <img th:src="@{img/avatars/avatar-3.jpg}" class="avatar img-fluid rounded-circle"
+                                            <img th:src="@{img/avatars/avatar-3.jpg}"
+                                                 class="avatar img-fluid rounded-circle"
                                                  alt="Sharon Lessman">
                                         </div>
                                         <div class="col-10 ps-2">
@@ -219,17 +223,13 @@
                             <i class="align-middle" data-feather="settings"></i>
                         </a>
 
-                        <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                            <img th:src="@{img/avatars/avatar.jpg}" }class="avatar img-fluid rounded me-1" alt="Charles Hall"/>
-                            <span class="text-dark">Chris Hung</span>
-                        </a>
                         <div class="dropdown-menu dropdown-menu-end">
                             <a class="dropdown-item" href="#"><i class="align-middle me-1"
                                                                  data-feather="user"></i> Profile</a>
                             <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i>
                                 Analytics</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="index.html"><i class="align-middle me-1"
+                            <a class="dropdown-item" href="#"><i class="align-middle me-1"
                                                                           data-feather="settings"></i> Settings &
                                 Privacy</a>
                             <a class="dropdown-item" href="#"><i class="align-middle me-1"
@@ -268,199 +268,24 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Username</th>
-                                <th>Image</th>
-                                <th>FullName</th>
-                                <th>Date of birth</th>
-                                <th>About</th>
                                 <th>Status</th>
-                                <th>Created Date</th>
                                 <th colspan="2">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>user1</td>
-                                <td><img width="40%" th:src="@{img/avatars/avatar-3.jpg}" alt="avt"></td>
-                                <td>Chris Hung</td>
-                                <td>22/02/2022</td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                </td>
-                                <td>Online</td>
-                                <td>28/10/2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Unlock</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger">Lock</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>user2</td>
-                                <td><img width="40%" th:src="@{img/avatars/avatar-3.jpg}" alt="avt"></td>
-                                <td>Chris Hung</td>
-                                <td>22/02/2022</td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                </td>
-                                <td>Online</td>
-                                <td>28/10/2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Unlock</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger">Lock</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>user3</td>
-                                <td><img width="40%" th:src="@{img/avatars/avatar-3.jpg}" alt="avt"></td>
-                                <td>Chris Hung</td>
-                                <td>22/02/2022</td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                </td>
-                                <td>Online</td>
-                                <td>28/10/2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Unlock</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger">Lock</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>user4</td>
-                                <td><img width="40%" th:src="@{img/avatars/avatar-3.jpg}" alt="avt"></td>
-                                <td>Chris Hung</td>
-                                <td>22/02/2022</td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                </td>
-                                <td>Online</td>
-                                <td>28/10/2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Unlock</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger">Lock</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>user5</td>
-                                <td><img width="40%" th:src="@{img/avatars/avatar-3.jpg}" alt="avt"></td>
-                                <td>Chris Hung</td>
-                                <td>22/02/2022</td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                </td>
-                                <td>Online</td>
-                                <td>28/10/2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Unlock</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger">Lock</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>user6</td>
-                                <td><img width="40%" th:src="@{img/avatars/avatar-3.jpg}" alt="avt"></td>
-                                <td>Chris Hung</td>
-                                <td>22/02/2022</td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                </td>
-                                <td>Online</td>
-                                <td>28/10/2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Unlock</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger">Lock</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>user7</td>
-                                <td><img width="40%" th:src="@{img/avatars/avatar-3.jpg}" alt="avt"></td>
-                                <td>Chris Hung</td>
-                                <td>22/02/2022</td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                </td>
-                                <td>Online</td>
-                                <td>28/10/2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Unlock</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger">Lock</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>user8</td>
-                                <td><img width="40%" th:src="@{img/avatars/avatar-3.jpg}" alt="avt"></td>
-                                <td>Chris Hung</td>
-                                <td>22/02/2022</td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                </td>
-                                <td>Online</td>
-                                <td>28/10/2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Unlock</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger">Lock</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>user9</td>
-                                <td><img width="40%" th:src="@{img/avatars/avatar-3.jpg}" alt="avt"></td>
-                                <td>Chris Hung</td>
-                                <td>22/02/2022</td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                </td>
-                                <td>Online</td>
-                                <td>28/10/2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Unlock</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger">Lock</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>user10</td>
-                                <td><img width="40%" th:src="@{img/avatars/avatar-3.jpg}" alt="avt"></td>
-                                <td>Chris Hung</td>
-                                <td>22/02/2022</td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                </td>
-                                <td>Online</td>
-                                <td>28/10/2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Unlock</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger">Lock</button>
-                                </td>
-                            </tr>
-
+                                <tr th:each="c, loop : ${account}"  >
+                                    <td th:text="${loop.count}"></td>
+                                    <td th:text="${c.username}"></td>
+                                    <td>
+                                        <span th:block th:if="${c.status}">unlock </span>
+                                        <span th:block th:unless="${c.status}">block</span>
+                                    </td>
+                                    <td>
+                                        <a th:href="@{/views/unlock_acc/*{c.id}}"th:if="${!c.status}" class="btn btn-primary btn-sm">unlock</a>
+                                        <a th:href="@{/views/block_acc/*{c.id}}" th:if="${c.status}"  class="btn btn-danger btn-sm">block</a>
+                                    </td>
+                                </tr>
                             </tbody>
-
                         </table>
                     </div>
                     <nav aria-label="Page navigation example ">
@@ -478,12 +303,8 @@
                     </nav>
                     <!-- /.card-body -->
                 </div>
-
             </div>
-
         </main>
-
-
         <footer class="footer">
             <div class="container-fluid">
                 <div class="row text-muted">

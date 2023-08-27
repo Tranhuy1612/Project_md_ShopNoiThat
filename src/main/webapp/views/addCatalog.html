@@ -6,8 +6,8 @@
 </head>
 <body>
 <th:block>
-    <form th:action="@{/views/addCategory}" th:object="${catalog}" method="post">
-        <input type="text" placeholder="name" th:field="*{name}">
+    <form th:action="@{/views/addCatalog}" th:object="${catalog}" method="post">
+        <input type="text" placeholder="name" th:text="*{name}">
         <input type="submit" value="Add">
     </form>
 </th:block>

@@ -15,9 +15,9 @@ import java.util.List;
 @Service
 public class AccountService implements IGenericService<User,Integer> {
     private final String FINDALL = "SELECT * FROM USERS";
-    private final String FINDBYID = "SELECT * FROM USERS WHERE ID = ?";
+ private final String FINDBYID = "SELECT * FROM USERS WHERE ID = ?";
     private final String UPDATE_STATUS = "UPDATE USERS SET status=? where id = ?";
-    private final String SEARCH = "SELECT *  FROM USERS WHERE name like ?";
+   private final String SEARCH = "SELECT *  FROM USERS WHERE name like ?";
 
 
     @Override
@@ -55,8 +55,9 @@ public class AccountService implements IGenericService<User,Integer> {
     }
 
     @Override
-    public void save(User user) {
+    public long save(User user) {
 
+        return 0;
     }
 
     @Override

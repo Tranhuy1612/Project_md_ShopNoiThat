@@ -19,7 +19,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
-    <link th:href="@{/css/app.css}" rel="stylesheet">
+    <link th:href="@{/adminCss/app.css}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -41,8 +41,8 @@
                     </a>
                 </li>
                 <li class="sidebar-item active">
-                    <a class="sidebar-link" href="category">
-                        <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Category</span>
+                    <a class="sidebar-link" href="catalog">
+                        <i class="align-middle" data-feather="grid"></i> <span class="align-middle">catalog</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -223,18 +223,13 @@
                             <i class="align-middle" data-feather="settings"></i>
                         </a>
 
-                        <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                            <img th:src="@{img/avatars/avatar.jpg}" class="avatar img-fluid rounded me-1"
-                                 alt="Charles Hall"/>
-                            <span class="text-dark">Chris Hung</span>
-                        </a>
                         <div class="dropdown-menu dropdown-menu-end">
                             <a class="dropdown-item" href="#"><i class="align-middle me-1"
                                                                  data-feather="user"></i> Profile</a>
                             <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i>
                                 Analytics</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="index.html"><i class="align-middle me-1"
+                            <a class="dropdown-item" href="admin"><i class="align-middle me-1"
                                                                           data-feather="settings"></i> Settings &
                                 Privacy</a>
                             <a class="dropdown-item" href="#"><i class="align-middle me-1"
@@ -255,9 +250,8 @@
                         <nav class="navbar navbar-expand-lg bg-light">
                             <div class="container-fluid">
                                 <div class="navbar-brand">
-                                    <a href="addCategory" type="button" class="btn btn-success" data-bs-toggle="modal"
-                                       data-bs-target="#addModal">
-                                        + Add new Category
+                                    <a href="addCatalog" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">
+                                        + Add new Catalog
                                     </a>
                                 </div>
                                 <form class="d-flex" role="search">
@@ -276,7 +270,7 @@
                             <tr>
                                 <th scope="col">STT</th>
                                 <th scope="col">name</th>
-                                <th scope="col">Status</th>
+                                <th scope="col">Description</th>
                                 <th scope="col" colspan="2">action</th>
                             </tr>
                             </thead>
@@ -284,10 +278,7 @@
                             <tr th:each="c, loop : ${catalogs}">
                                 <td th:text="${loop.count}"></td>
                                 <td th:text="${c.name}"></td>
-                                <td>
-                                    <span th:block th:if="${c.status}">đang bán</span>
-                                    <span th:block th:unless="${c.status}">hết hàng</span>
-                                </td>
+                                <td th:text="${c.description}"></td>
                                 <td>
                                     <a th:href="@{|/views/block_catalog/${c.id}|}"
                                        class="btn btn-danger btn-sm">block</a>
@@ -355,13 +346,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Category</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Catalog</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form>
                     <div class="mb-3">
-                        <label for="category_name" class="form-label">Category Name</label>
+                        <label for="category_name" class="form-label">Catalog Name</label>
                         <input type="text" class="form-control" id="category_name">
                     </div>
                     <div class="mb-3">

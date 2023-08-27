@@ -81,12 +81,10 @@ public class AdminController {
         return "redirect:/product";
     }
 
-
     @GetMapping("/addProduct")
-    public ModelAndView upload() {
-        return new ModelAndView("Product", "product", new ProductDto());
+    public String upload() {
+        return "/product";
     }
-
     @PostMapping("/addProduct")
     public String doUpload(@ModelAttribute ProductDto productDto) {
         // upload file
@@ -118,31 +116,31 @@ public class AdminController {
     //    ********************  Phần quản lý tài khoản  ******************
     @Autowired
     private AccountService accountService;
-    @GetMapping("/account")
+    @GetMapping("/user")
     public ModelAndView listAcc() {
         List<User> users = accountService.findAll();
-        ModelAndView modelAndView = new ModelAndView("admin/acc/account", "account", users);
+        ModelAndView modelAndView = new ModelAndView("/user", "account", users);
         return modelAndView;
     }
 
     @GetMapping("/unlock_acc/{id}")
     public String unlockAcc(@PathVariable("id") Integer id) {
         accountService.updateStatusAcc(id, true);
-        return "redirect:/admin/account";
+        return "redirect:/views/user";
     }
 
     @GetMapping("/block_acc/{id}")
     public String blockAcc(@PathVariable("id") Integer id) {
         accountService.updateStatusAcc(id, false);
-        return "redirect:/admin/account";
+        return "redirect:/views/user";
     }
 
 
-    //    ********************  Phần quản lý danh mục  ******************
+    //    ------------------  Category  --------------------
     @Autowired
     private CatalogService catalogService;
 
-    @GetMapping("/catalog")
+    @GetMapping("/category")
     public ModelAndView listCatalog() {
         List<Catalog> catalogs = catalogService.findAll();
         ModelAndView modelAndView = new ModelAndView("/category", "catalogs", catalogs);
@@ -152,16 +150,16 @@ public class AdminController {
     @GetMapping("/addCatalog")
     public ModelAndView add() {
         // Tạo ModelAndView để hiển thị form thêm mới trong view "/views/addCatalog"
-        ModelAndView modelAndView = new ModelAndView("/addCategory", "catalog", new Catalog());
+        ModelAndView modelAndView = new ModelAndView("/addCatalog", "catalog", new Catalog());
         return modelAndView;
     }
 
     @PostMapping("/addCatalog")
-    public String add(@ModelAttribute("catalog") Catalog catalog) {
+    public String add(@ModelAttribute("category") Catalog catalog) {
         // Lưu thông tin công việc mới
         catalogService.save(catalog);
         // Chuyển hướng về trang danh sách công việc
-        return "redirect:/category";
+        return "redirect:/catalog";
     }
 
     @GetMapping("/editCatalog/{id}")
@@ -169,7 +167,7 @@ public class AdminController {
         // Lấy công việc cần chỉnh sửa dựa trên ID
         Catalog catalogEdit = catalogService.findById(id);
         // Tạo ModelAndView để hiển thị form chỉnh sửa trong view "/admin/ctl/add_catalog"
-        ModelAndView modelAndView = new ModelAndView("/editCategory", "catalog", catalogEdit);
+        ModelAndView modelAndView = new ModelAndView("/editCatalog", "catalog", catalogEdit);
         return modelAndView;
     }
 
@@ -178,6 +176,25 @@ public class AdminController {
         // Lưu thông tin công việc đã cập nhật
         catalogService.save(catalog);
         // Chuyển hướng về trang danh sách công việc
-        return "redirect:/category";
+        return "redirect:/catalog";
     }
+//    @GetMapping("/searchCategory")
+//    public String search(@RequestParam(name = "searchKeyword", required = false) String searchKeyword, Model model) {
+//        List<Catalog> searchResults;
+//
+//        if (searchKeyword != null && !searchKeyword.isEmpty()) {
+//            // Gọi phương thức tìm kiếm từ dịch vụ dựa trên keyword
+//            searchResults = catalogService.searchByKeyword(searchKeyword);
+//        } else {
+//            // Nếu keyword rỗng hoặc null, hiển thị danh sách toàn bộ danh
+//            searchResults = catalogService.findAll();
+//        }
+//
+//        // Thêm kết quả tìm kiếm vào model để truyền đến view
+//        model.addAttribute("catalogs", searchResults);
+//        model.addAttribute("keyword", searchKeyword); // Để giữ lại keyword trên giao diện tìm kiếm
+//
+//        return "redirect:/category"; // Trả về tên view để hiển thị kết quả
+//    }
+
 }

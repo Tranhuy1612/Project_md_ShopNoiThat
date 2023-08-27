@@ -85,7 +85,7 @@ public class ProductService implements IGenericService<Product,Integer> {
 
 
     @Override
-    public void save(Product product) {
+    public long save(Product product) {
         Connection conn = null;
         try {
             conn = ConnectDB.getConnection();
@@ -117,6 +117,7 @@ public class ProductService implements IGenericService<Product,Integer> {
         } finally {
             ConnectDB.closeConnection(conn);
         }
+        return 0;
     }
 
     @Override

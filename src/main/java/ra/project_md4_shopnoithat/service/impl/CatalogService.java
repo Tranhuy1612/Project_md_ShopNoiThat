@@ -20,7 +20,7 @@ public class CatalogService implements IGenericService<Catalog, Integer> {
     private final String FIND_BY_ID = "SELECT * FROM CATALOG WHERE id_catalog = ?";
     private final String INSERT = "INSERT INTO  CATALOG( name, status) values(?,?)";
     private final String UPDATE = "UPDATE CATALOG SET name= ?,status=? where id_catalog = ?";
-//    private final String SEARCH = "SELECT *  FROM CATALOG WHERE name like ?";
+    private final String SEARCH = "SELECT *  FROM CATALOG WHERE name like ?";
 
     @Override
     public List<Catalog> findAll() {
@@ -45,7 +45,6 @@ public class CatalogService implements IGenericService<Catalog, Integer> {
         }
         return list;
     }
-
     @Override
     public Catalog findById(Integer id) {
         Connection conn = null ;
@@ -69,9 +68,8 @@ public class CatalogService implements IGenericService<Catalog, Integer> {
         }
         return catalog;
     }
-
     @Override
-    public void save(Catalog catalog) {
+    public long save(Catalog catalog) {
         Connection conn = null;
         conn = ConnectDB.getConnection();
         try {
@@ -92,15 +90,12 @@ public class CatalogService implements IGenericService<Catalog, Integer> {
         }finally {
             ConnectDB.closeConnection(conn);
         }
+        return 0;
     }
-
-
     @Override
     public void delete(Integer id) {
 
     }
-
-
 //
 //    public List<Catalog> searchByKeyword(String keyword) {
 //        List<Catalog> result = new ArrayList<>();

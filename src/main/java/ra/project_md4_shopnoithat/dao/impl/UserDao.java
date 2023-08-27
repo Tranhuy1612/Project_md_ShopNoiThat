@@ -135,10 +135,8 @@ public class UserDao implements IGenericDao<User, Long> {
                 user.setId(rs.getLong("id"));
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
-//                user.setFullName(rs.getString("full_name"));
-//                user.setAvatar(rs.getString("avatar"));
-//                user.setRoleId(rs.getLong("role_id"));
-
+                user.setStatus(rs.getBoolean("status"));
+                user.setRoleId(rs.getLong("role_id"));
             }
 
         } catch (SQLException e) {

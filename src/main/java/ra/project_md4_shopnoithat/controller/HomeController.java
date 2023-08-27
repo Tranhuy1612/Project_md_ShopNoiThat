@@ -99,19 +99,22 @@ public class HomeController {
         // checkk validate
         // tao mois user
         User user = userService.login(formLoginDto);
-        session.setAttribute("userlogin", user);
-        session.setAttribute("cart", new ArrayList<>());
         if (user == null) {
             return "redirect:/login";
-        } else if (user.getRoleId() == 1) {
+        }
+        session.setAttribute("userlogin", user);
+        if (user.getRoleId() == 1) {
+            System.out.println("Welcome to the admin page");
             return "redirect:/views";
         }
+        session.setAttribute("store", new ArrayList<>());
         return "redirect:/";
     }
 
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.removeAttribute("userlogin");
+        session.setAttribute("cart", null);
         return "redirect:/";
     }
 
@@ -137,19 +140,19 @@ public class HomeController {
     }
     //   ---------  catalog------------
 
-    @GetMapping("/category")
+    @GetMapping("/catalog")
     public String category() {
-        return "/category";
+        return "/catalog";
     }
 
-    @GetMapping("/addCategory")
+    @GetMapping("/addCatalog")
     public String addCatalog() {
-        return "/addCategory";
+        return "/addCatalog";
     }
 
-    @GetMapping("/editCategory")
+    @GetMapping("/editCatalog")
     public String editCategory() {
-        return "/editCategory";
+        return "/editCatalog";
     }
 
 }

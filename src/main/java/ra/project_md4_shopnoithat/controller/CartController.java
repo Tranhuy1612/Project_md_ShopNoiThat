@@ -23,9 +23,8 @@ public class CartController {
 
     @RequestMapping
     public String getCart(HttpSession session, Model model) {
-
-        // đã có người đăng nhập rồi
-
+        //set lại giỏ hàng
+        cartService.setCart((List<CartItem>) session.getAttribute("cart"));
 //        tính tổng tiền
         double total = cartService.findAll().stream().map(ci -> ci.getQuantity() * ci.getProduct().getPrice()).reduce((double) 0, Double::sum);
         model.addAttribute("total", total);
@@ -39,7 +38,6 @@ public class CartController {
 
         // kiểm tra sản phẩm dã có trong giỏ hàng chưa
         CartItem cartItem = cartService.findByProductId(idPro);
-
         if (cartItem == null) {
             // tạo mới item
             cartItem = new CartItem(cartService.getNewId(), p, 1);
